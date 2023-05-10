@@ -1,0 +1,16 @@
+%{
+int pov_no=0,neg_no=0;
+%}
+%%
+[-][0-9]+ {neg_no++;
+              printf("negative number=%s\n",yytext);}
+[0-9]+ {pov_no++; 
+               printf("positive number=%s\n",yytext);}
+%%
+int yywrap(void){}
+int main()
+{
+yylex();
+printf("number of posive integers=%d,""\n number of negativenumbers=%d\n",pov_no,neg_no);
+return 0;
+}
