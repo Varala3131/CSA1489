@@ -1,0 +1,13 @@
+%{
+%}  
+%%
+"<"[^>]*> {printf("%s\n", yytext); }  
+. ; 
+%%      
+int yywrap(){}
+int main(int argc, char*argv[])
+{
+  printf(" enter the html code\n"); 
+  yylex(); 
+   return 0;
+}
